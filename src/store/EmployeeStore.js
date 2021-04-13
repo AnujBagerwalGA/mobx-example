@@ -20,8 +20,10 @@ const EmployeeModal = types
       self.math = parseInt(value);
     },
     getEnglishMarks: flow(function* getEnglishMarks() {
-      // It is like Generater Function.
-      // Use to call API's.
+      // It is like Generater Function. // https://www.youtube.com/watch?v=EzdgkEMvrvA
+      // Generater Function is use to suspend value
+      // it excute one yield at a time
+      // flow Use to call API's.
       let response = yield axios.get('https://reqres.in/api/users?page=2');
       applySnapshot(self, { ...self, english: response.data.total }); // Another way to set value.
     }),
